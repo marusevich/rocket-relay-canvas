@@ -2,6 +2,8 @@
 
 A no-login team drawing game for anniversary events. Players open the same link, enter a name, and take turns adding one stroke to a shared 600x400 canvas.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/marusevich/rocket-relay-canvas)
+
 ## Run locally
 
 ```sh
