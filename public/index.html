@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rocket Relay Canvas</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="Game controls">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">R</div>
+          <div>
+            <h1>Rocket Relay Canvas</h1>
+            <p id="statusText">Enter your name to join the shared canvas.</p>
+          </div>
+        </div>
+
+        <form class="join-panel" id="joinForm">
+          <label for="nameInput">Name</label>
+          <div class="join-row">
+            <input id="nameInput" name="name" autocomplete="name" maxlength="24" placeholder="Your name" />
+            <button type="submit">Join</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="workspace">
+        <aside class="tool-panel" aria-label="Drawing tools">
+          <div class="panel-section">
+            <span class="section-label">Color</span>
+            <div class="color-grid" id="colorGrid" aria-label="Brush color"></div>
+          </div>
+
+          <div class="panel-section">
+            <label class="range-label" for="brushSize">
+              <span>Brush size</span>
+              <strong id="brushValue">8</strong>
+            </label>
+            <input id="brushSize" type="range" min="2" max="28" value="8" />
+          </div>
+
+          <div class="panel-section">
+            <span class="section-label">Players</span>
+            <ol class="player-list" id="playerList"></ol>
+          </div>
+        </aside>
+
+        <section class="canvas-stage" aria-label="Shared drawing canvas">
+          <div class="canvas-header">
+            <div>
+              <span class="section-label">Shared canvas</span>
+              <strong id="turnText">Waiting for players</strong>
+            </div>
+            <div class="counter"><span id="strokeCount">0</span> strokes</div>
+          </div>
+
+          <canvas id="drawingCanvas" width="600" height="400" aria-label="Team drawing canvas"></canvas>
+
+          <div class="actions">
+            <button id="doneButton" class="primary hidden" type="button">Done — pass it on</button>
+            <button id="saveButton" type="button">Save image</button>
+            <button id="undoButton" type="button" class="host-only hidden">Undo</button>
+            <button id="clearButton" type="button" class="danger host-only hidden">Clear all</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
